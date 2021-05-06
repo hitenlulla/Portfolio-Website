@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/shortcut-icon.png' %}"/>
+    <link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+        <script
+        src="https://kit.fontawesome.com/50336dd70a.js"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <script src="{% static 'script/script.js' %}" defer></script>
+</head>
+<body>
+    {% with request.resolver_match.url_name as url_name %}
+        <nav class="secondary-navbar">
+            <img src="{% static 'images/shortcut-icon.png' %}" alt="" class="nav-logo">
+            <ul class="nav-items">
+                <li class="nav-item">
+                    <a href="{% url 'home' %}" class="nav-link {% if url_name == 'home' %}nav-active{% endif %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'projects' %}" class="nav-link {% if url_name == 'projects' %}nav-active{% endif %}">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'about' %}" class="nav-link {% if url_name == 'about' %}nav-active{% endif %}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'contact' %}" class="nav-link {% if url_name == 'contact' %}nav-active{% endif %}">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    {% endwith %}
+
+    <div class="mobile-navbar">
+        <button class="mobile-navbar-btn">
+            <span class="mobile-navbar-icon">&nbsp;</span>
+        </button>
+        <div class="mobile-navbar-background">&nbsp;</div>
+        <nav class="mobile-navbar-nav">
+            <ul class="mobile-nav-items">
+                <li class="mobile-nav-item">
+                    <a href="{% url 'home' %}" class="mobile-nav-link">Home</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="{% url 'projects' %}" class="mobile-nav-link">Projects</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="{% url 'about' %}" class="mobile-nav-link">About</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="{% url 'contact' %}" class="mobile-nav-link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

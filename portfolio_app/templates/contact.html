@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+<section class="contact-page">
+    <div class="container-1">
+        <div class="message-main">Wish to turn your idea into a website?</div>
+        <div class="message-sub">Let's get in contact and make it work.&#x2705;</div>
+        <div class="glassmorphism mail-ref">
+            <div class="mail-icon">&#x1f4e7;</div>
+            <a class="mail" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=hitenlulla99@gmail.com" target="_blank"> Mail me at <br>hitenlulla99@gmail.com</a>
+        </div>
+    </div>
+    <div class="option">Or</div>
+    <div class="container-2">
+        <form method="POST" class="glassmorphism">
+            {% csrf_token %}
+            <h1>Share your idea&#128161;</h1>
+            <input type="text" name="name" placeholder="Full name*" required>
+            <input type="email" name="email" placeholder="Email adress*" required>
+            <textarea name="idea" rows="6" cols="50" placeholder="Share your brilliant idea and we shall work to make it come true.*" required></textarea>
+            <input type="submit" class="btn-submit">
+            <div class="reply_from_server">{{ response }}</div>
+        </form>
+    </div>
+</section>
+{% endblock %}

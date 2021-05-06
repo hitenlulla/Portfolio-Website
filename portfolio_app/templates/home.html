@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/shortcut-icon.png' %}"/>
+    <link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+    <script src="{% static 'script/script.js' %}" defer></script>
+</head>
+
+<body class="dark">
+    <nav class="main-navbar">
+        <div class="blank">&nbsp;</div>
+        <ul class="nav-items">
+            <li class="nav-item">
+                <a href="{% url 'home' %}" class="nav-link nav-active">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'projects' %}" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'about' %}" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="mobile-navbar">
+        <button class="mobile-navbar-btn">
+            <span class="mobile-navbar-icon">&nbsp;</span>
+        </button>
+        <div class="mobile-navbar-background">&nbsp;</div>
+        <nav class="mobile-navbar-nav">
+            <ul class="mobile-nav-items">
+                <li class="mobile-nav-item">
+                    <a href="{% url 'home' %}" class="mobile-nav-link">Home</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="{% url 'projects' %}" class="mobile-nav-link">Projects</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="{% url 'about' %}" class="mobile-nav-link">About</a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="{% url 'contact' %}" class="mobile-nav-link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="landing-logo">
+        <img src="{% static 'images/logo-bg.png' %}" class="logo-bg" alt="">
+        <img src="{% static 'images/shortcut-icon.png' %}" class="logo-icon" alt="">
+    </div>
+
+    <div class="landing-data">
+        <div class="salutation">Hello,</div>
+        <div class="introduction">I'm Hiten Lulla.</div>
+        <div class="developer">Full Stack Developer</div>
+        <a href="{% url 'contact' %}" class="btn-contact">Let's Talk</a>
+    </div>
+    
+    <section class="landing-svg-container">
+        <img src="{% static 'images/desktop-landing.png' %}" class="landing-svg-desktop" alt="">
+        <img src="{% static 'images/laptop-landing.png' %}" class="landing-svg-laptop" alt="">
+        <img src="{% static 'images/tab-landing.png' %}" class="landing-svg-tab" alt="">
+        <img src="{% static 'images/tab-mid-landing.png' %}" class="landing-svg-tab-mid" alt="">
+        <img src="{% static 'images/mobile-landing.png' %}" class="landing-svg-mobile" alt="">
+    </section>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About{% endblock %}
+{% block content %}
+<section class="about">
+    <div class="about-container">
+        <div class="about-sidebar glassmorphism">
+            <div class="about-sidebar-upper">
+                <img
+                    src="{% static 'images/Dp.jpg' %}"
+                    alt="DP"
+                    class="about-sidebar-upper-image"
+                />
+                <div class="about-sidebar-upper-name">
+                    Hiten Lulla
+                </div>
+                <div class="about-sidebar-upper-quote">
+                    &nbsp;&nbsp;&nbsp;&ndash;&ldquo;Your code doesn't define what kind of a programmer you are, it defines what kind of person you are.&rdquo;
+                </div>
+            </div>
+            <div class="about-sidebar-lower">
+                <div class="social-media">
+                    <a href="https://www.linkedin.com/in/hiten-lulla-a434201aa/" target="_blank"><i class="fab fa-linkedin social-media-icons"></i></i></a>
+                    <a href="https://github.com/hitenlulla" target="_blank"><i class="fab fa-github social-media-icons"></i></i></a>
+                    <a href="https://www.facebook.com/hiten.lulla.581" target="_blank"><i class="fab fa-facebook-square social-media-icons"></i></a>
+                    <a href="https://twitter.com/hiten_lulla" target="_blank"><i class="fab fa-twitter footer__icon social-media-icons"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="about-content glassmorphism">
+            <div class="about-content-heading">About Me</div>
+            <div class="about-content-developer">Full stack Developer</div>
+            <div class="about-content-division">
+                <div class="about-content-division-left glassmorphism">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat repudiandae consectetur blanditiis officiis ab. Cupiditate quibusdam quisquam obcaecati! Accusamus repudiandae animi illum consequatur, dolorem officia eius odit iure commodi quas ab nesciunt non facilis at possimus praesentium sint ad provident.
+                </div>
+                <div class="about-content-division-right glassmorphism">
+                    <div class="about-content-division-right-title">Birth :</div>
+                    <div class="about-content-division-right-value">09 May, 2000</div>
+
+                    <div class="about-content-division-right-title">City :</div>
+                    <div class="about-content-division-right-value">
+                        Ulhasnagar, Maharashtra
+                    </div>
+
+                    <div class="about-content-division-right-title">Country :</div>
+                    <div class="about-content-division-right-value">India</div>
+
+                    <div class="about-content-division-right-title">Email :</div>
+                    <div class="about-content-division-right-value">
+                        hitenlulla99@gmail.com
+                    </div>
+                </div>
+            </div>
+            <div class="skills glassmorphism">
+                <div class="skills-title">Skills :</div>
+                <div class="skills-set">
+                    <span class="skill">HTML- CSS</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">Data Structures</span>
+                    <span class="skill">Django Framework</span>
+                </div>
+            </div>
+            <a href="{% static 'resume/Resume.pdf' %}" class="resume-link" target="_blank">
+                <div class="resume glassmorphism">
+                    Want to know more about me? <br>
+                   <span class="highlight">Click here</span> to view my Resume
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

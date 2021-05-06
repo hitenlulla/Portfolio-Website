@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Projects{% endblock %}
+{% block content %}
+<section class="projects">
+    <div class="title">projects</div>
+    {% for d in data %}
+        <div class="project glassmorphism">
+            <div class="project__img">
+                <img src="{{ d.img.url }}" class="output" alt="">
+            </div>
+            <div class="project__info">
+                <h1 class="project__title">{{ d.title }}</h1>
+                <p class="project__text">{{ d.info }}</p>
+                <div class="project__date">
+                    Date:
+                    <span>{{ d.month }} {{ d.day }}, {{ d.year }}</span>
+                </div>
+                <div class="project__technologies">
+                    Technologies:
+                    {% if d.html %}
+                        <i class="fab fa-html5 icon"></i>
+                    {% endif %}
+
+                    {% if d.css %}
+                        <i class="fab fa-css3-alt icon"></i>
+                    {% endif %}
+
+                    {% if d.javascript %}
+                        <i class="fab fa-js icon"></i>
+                    {% endif %}
+
+                    {% if d.python %}
+                        <i class="fab fa-python icon"></i>
+                    {% endif %}
+
+                    {% if d.database %}
+                        <i class="fas fa-database icon"></i>
+                    {% endif %}
+
+                    {% if d.django %}
+                        <span class="iconify icon icon" data-icon="simple-icons:django" data-inline="false"></span>
+                    {% endif %}
+                    
+                    {% if d.tensorflow %}
+                        <span class="iconify icon" data-icon="simple-icons:tensorflow" data-inline="false"></span>
+                    {% endif %}        
+                </div>
+                <a href="{{ d.github_link }}" class="project__link" target="_blank">Check out the project at <i class="project_ref fab fa-github"></i></i></a>
+            </div>
+        </div>
+    {% endfor %}
+</section>
+{% endblock %}
