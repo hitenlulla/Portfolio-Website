@@ -7,8 +7,6 @@ def home(request):
 
 def projects(request):
     data = ProjectModel.objects.all()
-    for d in data:
-        print(d.github_link)
     return render(request, 'projects.html',{'data': data})
 
 def about(request):

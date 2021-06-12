@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class ProjectModel(models.Model):
-    img = models.FileField(upload_to ='static/images', blank = False)
+    img = models.FileField(upload_to ='project_images/', blank = False)
     title = models.CharField(max_length = 50)
     info = models.CharField(max_length = 200)
     day = models.CharField(max_length = 3)
